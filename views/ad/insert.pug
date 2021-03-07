@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  //- if user is not logged in, then error mesasge on the page
+  .container
+    if(!user)
+        h1 Please Login first!
+    else
+        h5.text-center #{title}
+        form(method='POST' action='/insert')
+            div.row
+                h5.col-sm-3 Car
+                input(type='text' name='car' placeholder='car make and model').col-sm-9
+            div.row
+                h5.col-sm-3 Description
+                input(type='text' name='average' placeholder='fuel economy of the car').col-sm-9
+            div.row
+                h5.col-sm-3 Price
+                input(type='text' name='price' placeholder='price of the car').col-sm-9
+            div.row
+                h5.col-sm-3 Engine
+                input(type='text' name='engine' placeholder='engine size of the car').col-sm-9
+            div.row
+                h5.col-sm-3 Type
+                input(type='text' name='type' placeholder='Type of the car').col-sm-9
+            div
+                button(type='submit' value='Submit').btn.btn-warning Add Car to Database

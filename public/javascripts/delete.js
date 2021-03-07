@@ -1,0 +1,17 @@
+$(document).ready(function () {
+    $('.deleteForm').on('submit', function (e) {
+        var currentForm = $(this).parent().parent();
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/remove/' + $(this).attr('id'),
+            success: function (data) {
+                currentForm.fadeOut();
+
+                setTimeout(function () {
+                    
+                }, 3000);
+            }
+        });
+    });
+});

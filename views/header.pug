@@ -1,0 +1,12 @@
+nav.navbar.navbar-expand-sm.bg-light.justify-content-center
+  ul.navbar-nav
+    if(!user)
+      li.nav-item
+        a.nav-link(href='/login') Login
+      li.nav-item
+        a.nav-link(href='/register') Register
+    else
+      li.nav-item
+        a.nav-link(href='/insert') Insert New Car
+      li.nav-item
+        a.nav-link(href='/logout') Logout
